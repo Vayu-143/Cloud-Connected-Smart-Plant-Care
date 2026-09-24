@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Plant Care Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header>
+
+            <h1>🌱 Smart Plant Care</h1>
+
+            <p>
+                Cloud-Connected Plant Monitoring Dashboard
+            </p>
+
+        </header>
+
+
+        <!-- Plant Information -->
+
+        <section class="plant-info">
+
+            <h2>Tomato Plant</h2>
+
+            <p>
+                Device ID:
+                <strong>PLANT-001</strong>
+            </p>
+
+        </section>
+
+
+        <!-- Sensor Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <h3>🌱 Soil Moisture</h3>
+
+                <p
+                    id="moisture"
+                    class="value"
+                >
+                    -- %
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🌡️ Temperature</h3>
+
+                <p
+                    id="temperature"
+                    class="value"
+                >
+                    -- °C
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💧 Humidity</h3>
+
+                <p
+                    id="humidity"
+                    class="value"
+                >
+                    -- %
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🚿 Pump</h3>
+
+                <p
+                    id="pump"
+                    class="value"
+                >
+                    OFF
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Plant Status -->
+
+        <section class="status-section">
+
+            <h2>Plant Status</h2>
+
+            <div
+                id="plantStatus"
+                class="status healthy"
+            >
+                Waiting for sensor data...
+            </div>
+
+        </section>
+
+
+        <!-- Controls -->
+
+        <section class="controls">
+
+            <h2>Controls</h2>
+
+            <div class="control-box">
+
+                <label for="threshold">
+                    Moisture Threshold:
+                </label>
+
+                <input
+                    type="number"
+                    id="threshold"
+                    value="30"
+                    min="0"
+                    max="100"
+                >
+
+                <button
+                    onclick="updateThreshold()"
+                >
+                    Update Threshold
+                </button>
+
+            </div>
+
+
+            <button
+                class="water-button"
+                onclick="waterPlant()"
+            >
+                🚿 Water Plant
+            </button>
+
+        </section>
+
+
+        <!-- Last Update -->
+
+        <section class="last-update">
+
+            <p>
+                Last Update:
+                <span id="lastUpdate">
+                    --
+                </span>
+            </p>
+
+        </section>
+
+
+        <!-- Message -->
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+
+        <!-- History -->
+
+        <section class="history">
+
+            <h2>Recent Sensor Readings</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Time</th>
+
+                        <th>Moisture</th>
+
+                        <th>Temperature</th>
+
+                        <th>Humidity</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="historyTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
